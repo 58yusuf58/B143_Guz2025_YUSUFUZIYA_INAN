@@ -1,0 +1,2 @@
+# B143_Guz2025_Ad_Soyad
+YUSUFU ZİYA İNAN
