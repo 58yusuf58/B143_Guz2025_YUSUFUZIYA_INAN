@@ -1,0 +1,41 @@
+while True:
+    try:
+       
+        uyku = float(input("Günlük uyku süresini (saat) giriniz: "))
+        ders = float(input("Günlük ders süresini (saat) giriniz: "))
+        serbest = float(input("Günlük serbest zaman süresini (saat) giriniz: "))
+   
+        if uyku < 0 or ders < 0 or serbest < 0:
+            print("Hata: Negatif değer girilemez. Tekrar deneyin.\n")
+            continue
+
+        if uyku + ders + serbest > 24:
+            print("Hata: Girilen sürelerin toplamı 24 saati geçemez.\n")
+            continue
+
+        break  # Her şey doğruysa döngüden çık
+
+    except ValueError:
+        print("Hata: Lütfen sayısal bir değer giriniz.\n")
+
+if uyku < 6:
+    uyku_durumu = "Yetersiz uyku"
+elif 6 <= uyku <= 8:
+    uyku_durumu = "Normal uyku"
+else:
+    uyku_durumu = "Fazla uyku"
+
+if ders >= 6:
+    ders_durumu = "Yoğun çalışma günü"
+else:
+    ders_durumu = "Normal çalışma günü"
+
+if uyku < 6 and ders >= 6:
+    genel_durum = "Verimsiz gün"
+else:
+    genel_durum = "Dengeli gün"
+
+print("\n--- GÜNLÜK DEĞERLENDİRME ---")
+print("Uyku durumu:", uyku_durumu)
+print("Ders durumu:", ders_durumu)
+print("Genel değerlendirme:", genel_durum)
